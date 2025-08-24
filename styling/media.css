@@ -14,6 +14,9 @@ nav .nav-links{
 
 
 @media (max-width:992px){
+    header{
+    display: none !important;
+   }
     .about-pages{
      flex-direction: column;
     align-items: flex-end;
