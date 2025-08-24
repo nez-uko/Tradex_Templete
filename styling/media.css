@@ -1,0 +1,227 @@
+@media (max-width:1170px) {
+    .slide>div{
+        width: calc(100% / 3);
+    }
+}
+
+@media (max-width:1150px){
+    
+nav .nav-links{
+    flex-wrap: wrap;
+    width: 500px;
+}
+}
+
+
+@media (max-width:992px){
+    .about-pages{
+     flex-direction: column;
+    align-items: flex-end;
+    
+    }
+    .about-services{
+        width: 40%;
+    left: 7%;
+    }
+    .about-img{
+        width: 60%;
+        margin-bottom: 5%;
+    }
+    .about-content{
+        width: 100%;
+    }
+    .counters-container , .slide , .blog-cards{
+        flex-wrap: wrap;
+    }
+    .counters-container >div{
+        width: 45%;
+        margin-bottom: 30px;
+    }
+
+ .Gallery-cards .card ,  .team-card , .services .card , .slide>div , .blog-card {
+    width: 45%;
+ }
+ .subscribe .container{
+    flex-wrap: wrap;
+    align-items: center;
+ }
+  .subscribe{
+    padding: 3% 10%;
+  }
+ .subscribe .container div , .subscribe .container form{
+ width: 80%;
+ margin-bottom: 3%;
+  }
+  .subscribe .container div h4{
+    font-size: 25px;
+  }
+  .subscribe .container form input{
+    width: 70%;
+  }
+  .client-img{
+    display: none;
+  }
+  .clients{
+    width: 100%;
+  }
+  .clients-cards{
+    justify-content: center;
+    gap: 20px;
+  }
+  .client-card{
+    width: 30%;
+  }
+  .footer-parts{
+    flex-wrap: wrap;
+  }
+  .footer-part{
+    width: 50%;
+  }
+}
+
+
+@media (max-width: 768px){
+    nav .container {
+        position: relative;
+    }
+    nav .nav-links{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #000;
+        padding: 10px;
+    }
+    nav .nav-links li a{
+        color: #fff;
+    }
+    nav .ul-links  , nav .ul-links .ul-links , .pages-ul{
+        position: static;
+        background: #111;
+        box-shadow: none;
+        display: none;
+        transition:all 0.3s ease;
+    }
+    nav .ul-links li , nav .ul-links .ul-links li , .pages-ul li{
+        padding: 5px ;
+    }
+    nav .ul-links li a, .pages-ul ul li a{
+        color: #fff;
+    }
+    nav .nav-links.active{
+        display: flex;
+        position: absolute;
+        top: calc(100% + 10px);
+    }
+    .Gallery-cards {
+
+    justify-content: center;
+
+    }
+    .Gallery-cards .card , .team-card , .slide>div , .blog-card {
+       width: 70% !important;
+      }
+    #menu-toggle , nav .ul-links li:hover .ul-links{
+        display: block;
+    }
+    nav .ul-links .ul-links , nav .ul-links li .ul-links{
+        display: none;
+    }
+    .slide , .blog-cards , .clients-cards{
+    flex-wrap: wrap;
+    }
+    .subscribe{
+        padding: 5% 5%;
+    }
+  .subscribe .container form input{
+    width: 50%;
+  }
+  .scroll-btn{
+    padding: 10px;
+  }
+   .client-card , .contact-info .info >div{
+    width: 45%;
+  }
+  .purchase div{
+    margin-bottom: 20px;
+  }
+      .purchase{
+        flex-direction: column;
+      }
+
+
+        .footer-parts{
+    flex-wrap: wrap;
+  }
+  .footer-part{
+    width: 80%;
+  }
+  .contact-form form div{
+    width:100% !important;
+  }
+}
+
+
+
+
+
+@media(max-width:650px){
+.about-container{
+    padding:5% 5%;
+}
+ .about-services{
+   position: static;
+     width: 85%;
+     margin-bottom: 20px;
+ }
+ .about-pages{
+    flex-direction: column;
+    align-items: center;
+ }
+ .about-img{
+    width: 85%;
+ }
+ .services-cards {
+    flex-direction: column;
+    align-items: center;
+}
+
+.services .card {
+    width: 80%;
+}
+
+.about-container,.our-work-container, .our-team , .our-pricing
+ , .services-container , .testimonial-container , .latest-blog-container{
+    padding: 5% 5%;
+}
+}
+
+@media(max-width:500px){
+   .counters-container{
+        flex-direction: column;
+    }
+
+     .subscribe .container div h4{
+        font-size: 17px;
+     }
+     .subscribe .container form{
+        text-align: center;
+     }
+  .subscribe .container form input{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .abou-ser .head>span {
+    font-size: 23px !important;
+  }
+  .contact-info .info{
+    justify-content: center;
+  }
+ 
+.client-card , .contact-info .info >div{
+    width: 70%;
+  }
+}
+
+
+
