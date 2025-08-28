@@ -238,16 +238,17 @@ function handelerror(element, msg=""){
 function nameValidation(element){
     let input = element.value.trim();
 
-    if(input.length < 3) {
+    if(input.length < 3) { 
         handelerror(element, "Please enter at least 3 characters!");
-        return;
+        return false;
     }
-
     let onlyLetters = /^[A-Za-z]+$/;
-    if (!onlyLetters.test(input)) {
+    if (!onlyLetters.test(input)) { 
         handelerror(element , 'Please enter letters only');
+        return false;
     } else {
         handelerror(element);
+        return true;
     }
 }
 
@@ -259,10 +260,13 @@ function emailValidation(element){
     let validMail = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
     if (!validMail.test(input) || input==='' ) {
         handelerror(element , 'Enter valid email');
+        return false;
     } else {
         handelerror(element);
+        return true;
     }
 }
+
 
 
 function passwordValidation(element){
@@ -270,26 +274,64 @@ function passwordValidation(element){
 
     if(input.length < 8) {
         handelerror(element, "Please enter at least 8 characters!");
-    }else  {
-      handelerror(element);
+        return false;
     }
     let validPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!validPassword.test(input)) {
-        handelerror(element , 'Enter Valid Password');
+        handelerror(element , 'Password must include Capital , Small Letters , Numbers and Symbols');
+        return false;
     } else {
         handelerror(element);
+        return true;
     }
 }
 
 
 function msgValidation(element){
+   
    let input = element.value.trim();
 
     if(input.length < 10) {
         handelerror(element, "Please enter at least 10 characters!");
+        return false;
     }else if(input.length >500) {
       handelerror(element, "You can enter maximum 500 charcter");
+      return false;
     } else {
         handelerror(element);
+        return true;
     }
 }
+
+let inputs=form.querySelectorAll('input')
+
+let textarea=form.querySelector('textarea');
+
+form.addEventListener('submit' ,(e)=>{
+   inputs.forEach((input)=>{
+    if(!input.value.trim()){
+      handelerror(input, 'This Field Is Required');
+      e.preventDefault();
+    }else{
+    if(input.id === 'userName') {
+      if(!nameValidation(input))e.preventDefault();
+      
+    }
+    else if(input.id==='userEmail') {
+      if(!emailValidation(input))e.preventDefault();
+      
+    }
+    else if(input.id==='userPassword') {
+      if(!passwordValidation(input))e.preventDefault();
+      
+    }
+    }
+   });
+   if(!textarea.value.trim()){
+      handelerror(textarea, 'This Field Is Required');
+      e.preventDefault();
+    }else{
+      if(!msgValidation(textarea))e.preventDefault();
+       
+    }
+});
